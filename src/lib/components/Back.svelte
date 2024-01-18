@@ -6,7 +6,6 @@
     afterNavigate(({from}) => {
         previousPage = from?.url.pathname || previousPage;
     }) 
-
 </script>
 
 <div class="bg-base-200" style="height: 5vh;">
