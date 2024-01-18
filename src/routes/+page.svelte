@@ -7,6 +7,8 @@
 	export function gotoMateria(endpoint){
 		goto('/materia/' + endpoint);
 	}
+
+	console.log(data)
 </script>
 
 <svelte:head>
