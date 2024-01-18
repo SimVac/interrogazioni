@@ -1,4 +1,4 @@
 /** @type {import('./$types').RequestHandler} */
 export function GET({ url }){
-    return Response("CIAO");
+    return new Response("CIAO");
 }
