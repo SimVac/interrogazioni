@@ -45,11 +45,10 @@ export async function updateOrdine(studente, materia){
   )
 }
 
-export async function updateMateriaAttivo(materia){
-  if (!materia) return;
+export async function updateMateriaAttivo(attivo, id){
   await db.query(
     "UPDATE materia SET attivo=? WHERE id=?",
-    [materia.attivo, materia.id]
+    [attivo, id]
   )
 }
 

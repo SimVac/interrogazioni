@@ -21,9 +21,11 @@
 					<h1 class="text-3xl font-bold mb-16 mx-10">Scegli la materia</h1>
 					<div class="grid grid-cols-2 gap-4 place-content-center">
 						{#each data.materie as materia}
-							<button class="btn btn-primary m-0.5" on:click={() => gotoMateria(materia.endpoint)}>
-								{ materia.abbreviazione }
-							</button>
+							{#if materia.attivo}
+								<button class="btn btn-primary m-0.5" on:click={() => gotoMateria(materia.endpoint)}>
+									{ materia.abbreviazione }
+								</button>
+							{/if}
 						{/each}
 					</div>
 				  </div>

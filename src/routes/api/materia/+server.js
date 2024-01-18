@@ -11,8 +11,8 @@ export async function GET({ url }){
 }
 
 /** @type {import('./$types').RequestHandler} */
-export async function POST({ request }) {		
+export async function POST({ request }) {
     let data = await request.formData();
-    console.log(data.get('id'))
-    return json({hello: 'hello'});
+    await updateMateriaAttivo(data.get('attivo') == "true" ? true : false, data.get('id'));
+    return new Response();
 }

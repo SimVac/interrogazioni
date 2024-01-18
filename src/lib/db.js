@@ -11,10 +11,9 @@ async function query(sql, params) {
         database: process.env.DB_NAME
       });
     const [results, ] = await connection.execute(sql, params);
-  
     return results;
 }
-  
+ 
 export default {
   query
 }
