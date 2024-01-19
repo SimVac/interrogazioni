@@ -1,0 +1,62 @@
+<script>
+    export let avviso;
+    export let admin = false;
+
+    export function deleteAvviso(id){
+        fetch('/api/avvisi/delete-avviso', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(id)
+        })
+        const avviso = document.getElementById("avviso-" + id);
+        avviso.parentNode.removeChild(avviso);
+    }
+
+    export function updatePreferito(id){
+        const dati = {
+            id: id,
+            preferito: document.getElementById(`preferito-${id}`).checked
+        }
+        fetch('/api/avvisi/update-preferito', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dati)
+        })
+    }
+</script>
+
+<div role="alert" id={ "avviso-" + avviso.id } class="alert flex justify-between alert-info bg-blue-200 my-10">
+    <div>
+      <h3 class="font-bold text-left">{ avviso.titolo }</h3>
+      <p class="text-s py-1 text-left">{ avviso.descrizione }</p>
+      <p class="text-xs text-left">{ avviso.data.toLocaleDateString("it-IT") }</p>
+    </div>
+    <div>
+        {#if admin}
+            {#if avviso.preferito}
+                <label class="swap">
+                    <input type="checkbox" id={ "preferito-" + avviso.id } on:click={() => updatePreferito(avviso.id)} checked/>
+                    <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M840-680H600v-80h240v80ZM200-120v-640q0-33 23.5-56.5T280-840h240v80H280v518l200-86 200 86v-278h80v400L480-240 200-120Zm80-640h240-240Z"/></svg>
+                    <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M200-120v-640q0-33 23.5-56.5T280-840h240v80H280v518l200-86 200 86v-278h80v400L480-240 200-120Zm80-640h240-240Zm400 160v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z"/></svg>
+                </label>
+
+                <button on:click={() => deleteAvviso(avviso.id)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                </button>
+            {:else}
+                <label class="swap">
+                    <input type="checkbox" id={ "preferito-" + avviso.id } on:click={() => updatePreferito(avviso.id)}/>
+                    <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M840-680H600v-80h240v80ZM200-120v-640q0-33 23.5-56.5T280-840h240v80H280v518l200-86 200 86v-278h80v400L480-240 200-120Zm80-640h240-240Z"/></svg>
+                    <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M200-120v-640q0-33 23.5-56.5T280-840h240v80H280v518l200-86 200 86v-278h80v400L480-240 200-120Zm80-640h240-240Zm400 160v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z"/></svg>
+                </label>
+
+                <button on:click={() => deleteAvviso(avviso.id)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                </button>
+            {/if}
+
+        {:else if avviso.preferito}
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z"/></svg>
+        {/if}
+    </div>
+</div>

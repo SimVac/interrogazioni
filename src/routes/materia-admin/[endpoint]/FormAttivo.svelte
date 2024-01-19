@@ -6,10 +6,15 @@
         const formData = new FormData(form);
         formData.set('attivo', document.getElementById('attivo').checked);
 
-        fetch("/api/materia", {
+        const dati = {
+            attivo: formData.get('attivo') == 'true' ? true : false,
+            id: formData.get('id')
+        }
+
+        fetch("/api/materia/attivo", {
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dati)
         });
     }
 </script>

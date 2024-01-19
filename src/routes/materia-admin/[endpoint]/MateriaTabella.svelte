@@ -18,20 +18,20 @@
                 <th>{ studente.cognome }</th>
                 {#if !studente.interrogato }
                     <th>
-                        <input id={ studente.cognome + "-interrogato" } type="checkbox" class="toggle toggle-primary" />
+                        <input id={ studente.cognome + "-interrogato" } name={ studente.cognome + "-interrogato" } type="checkbox" class="toggle toggle-primary" on:change={() => studente.interrogato = document.getElementById(studente.cognome + "-interrogato").checked} />
                     </th>
                 {:else}
                     <th>
-                        <input id={ studente.cognome + "-interrogato" } type="checkbox" class="toggle toggle-primary" checked />
+                        <input id={ studente.cognome + "-interrogato" } name={ studente.cognome + "-interrogato" } type="checkbox" class="toggle toggle-primary" checked on:change={() => studente.interrogato = document.getElementById(studente.cognome + "-interrogato").checked}/>
                     </th>
                 {/if}
                 {#if !studente.offerto }
                     <th>
-                        <input id={ studente.cognome + "-offerto" } type="checkbox" class="toggle toggle-primary" />
+                        <input id={ studente.cognome + "-offerto" } name={ studente.cognome + "-offerto" } type="checkbox" class="toggle toggle-primary" on:change={() => studente.interrogato = document.getElementById(studente.cognome + "-interrogato").checked}/>
                     </th>
                 {:else}
                     <th>
-                        <input id={ studente.cognome + "-offerto" } type="checkbox" class="toggle toggle-primary" checked />
+                        <input id={ studente.cognome + "-offerto" } name={ studente.cognome + "-offerto" } type="checkbox" class="toggle toggle-primary" checked on:change={() => studente.interrogato = document.getElementById(studente.cognome + "-interrogato").checked}/>
                     </th>
                 {/if}
             </tr>
