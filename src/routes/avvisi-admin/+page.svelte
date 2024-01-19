@@ -26,6 +26,10 @@
     }
 </script>
 
+<svelte:head>
+    <title>Avvisi Admin</title>
+</svelte:head>
+
 <section>
     <Back/>
     <div class="hero min-h-screen bg-base-200 mb-16">

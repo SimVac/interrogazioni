@@ -6,6 +6,10 @@
     export let avvisi = data.avvisi;
 </script>
 
+<svelte:head>
+    <title>Avvisi</title>
+</svelte:head>
+
 <section>
     <div class="hero min-h-screen bg-base-200 mb-16">
         <div class="hero-content text-center">

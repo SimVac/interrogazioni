@@ -10,6 +10,10 @@
     }
 </script>
 
+<svelte:head>
+    <title>Admin</title>
+</svelte:head>
+
 <section>
     <div class="hero min-h-screen bg-base-200 mb-16">
         <div class="hero-content text-center">
