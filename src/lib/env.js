@@ -1,0 +1,7 @@
+import { SECRET_DB_HOST, SECRET_DB_USER, SECRET_DB_PASSWORD, SECRET_DB_NAME, SECRET_PASSWORD } from '$env/static/private';
+
+export const DB_HOST = SECRET_DB_HOST;
+export const DB_USER = SECRET_DB_USER;
+export const DB_PASSWORD = SECRET_DB_PASSWORD;
+export const DB_NAME = SECRET_DB_NAME;
+export const PASSWORD = SECRET_PASSWORD;

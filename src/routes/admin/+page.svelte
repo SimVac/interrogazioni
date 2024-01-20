@@ -1,6 +1,12 @@
 <script>
     import { goto } from '$app/navigation';
     import Navbar from '$lib/components/Navbar.svelte';
+    import { isAuthenticated } from '../store/store';
+
+    $: {
+        if (!$isAuthenticated) {
+            adminContent = 'Contenuto riservato per gli amministratori.';
+    }
 
     export let data;
     export const materie = data.materie;
