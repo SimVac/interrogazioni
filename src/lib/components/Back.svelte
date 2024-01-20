@@ -1,6 +1,6 @@
 <script>
     import { goto, afterNavigate } from '$app/navigation';
-    import { base } from '$app/paths'
+    import { base } from '$app/paths';
 
     let previousPage = base;
     afterNavigate(({from}) => {
