@@ -27,11 +27,11 @@
       return array;
     }
 
-    export function shuffleStudents(){
+    function shuffleStudents(){
       elenco = shuffle(elenco);
     }
 
-    export function resetStudents(){
+    function resetStudents(){
       elenco = elenco.sort((a, b) => {
         return a.cognome.toLowerCase().localeCompare(b.cognome.toLowerCase());
       });
@@ -42,7 +42,12 @@
       })
     }
 
-    export function sendData(){
+    function reverseStudents(){
+      elenco = elenco.reverse()
+    }
+
+    function sendData(){
+      elenco = elenco.filter(a => a.offerto).concat(elenco.filter(a => !a.offerto))
       const dati_studenti = elenco.map((studente, idx) => {
         studente.posizione = idx+1;
         return studente;
@@ -81,6 +86,9 @@
                   </button>
                   <button class="btn primary-btn" on:click={resetStudents}>
                     Reset
+                  </button>
+                  <button class="btn primary-btn" on:click={reverseStudents}>
+                    Reverse
                   </button>
     
                   <div class="flex items-center">
