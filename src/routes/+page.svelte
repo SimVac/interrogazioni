@@ -21,9 +21,11 @@
 		<div class="hero min-h-screen bg-base-200 mb-16">
 			<div class="hero-content text-center">
 				  <div class="max-w-md">
-					<a href="/avvisi">
-						<Avviso { avviso }/>
-					</a>
+					{#if avviso}
+						<a href="/avvisi">
+							<Avviso { avviso }/>
+						</a>
+					{/if}
 					<h1 class="text-3xl font-bold mb-16 mx-10">Scegli la materia</h1>
 					<div class="grid grid-cols-2 gap-4 place-content-center">
 						{#each materie as materia}

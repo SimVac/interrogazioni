@@ -3,6 +3,7 @@ export async function load({ fetch, params }) {
     const materie = await response.json();
     const responseAvviso = await fetch('/api/avvisi/ultimo-avviso');
     const avviso = await responseAvviso.json();
-    avviso.data = new Date(avviso.data);
+    if (avviso)
+        avviso.data = new Date(avviso.data);
     return { materie, avviso };
 }
