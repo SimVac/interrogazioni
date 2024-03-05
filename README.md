@@ -28,7 +28,7 @@ INSERT INTO e_interrogato (id_studente, id_materia, posizione, interrogato, offe
 ```
 
 ## Variabili d'ambiente
-Nel file _.env.config_ sono presenti le variabili d'ambiente utilizzate dall'app. Si crea quindi un file _.env_ contente quelle variabili d'ambiente con i dati corretti (quelli presenti nel file sono di esempio).
+Nel file _.env.example_ sono presenti le variabili d'ambiente utilizzate dall'app. Si crea quindi un file _.env_ contente quelle variabili d'ambiente con i dati corretti (quelli presenti nel file sono di esempio).
 Di seguito sono elencate le variabili d'ambiente e il loro utilizzo
 ```
 SECRET_PASSWORD=password da utilizzare per accedere al pannello di amministrazione
