@@ -18,7 +18,7 @@ Prepara il database MySql utilizzando la query nel file _database.sql_
 ### Inserimento dei dati
 Utilizzare la seguente query per inserire i dati degli studenti e materie, personalizzando i valori d'esempio usando i dati effettivi (inserire gli studenti nell'ordine predefinito, per esempio in ordine alfabetico per cognome)
 ```
-INSERT INTO studente (nome, cognome) VALUES ('Nome', Cognome), ('Nome', 'Cognome')
+INSERT INTO studente (nome, cognome) VALUES ('Nome', 'Cognome'), ('Nome', 'Cognome')
 INSERT INTO materia (nome, abbreviazione, endpoint, attivo) VALUES ('Nome materia', 'Abbreviazione materia', 'endpoint da utilizzare', 1), ('Nome materia', 'Abbreviazione materia', 'endpoint da utilizzare', 1)
 ```
 Infine eseguire la seguente query per preparare in ordine gli studenti per ogni materia (questa non va personalizzata)
